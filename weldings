@@ -1,0 +1,856 @@
+```html
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocholah Metal Fabricators & Custom Welding | Eldoret Town</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        steel: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                            600: '#475569',
+                            100: '#f1f5f9'
+                        },
+                        spark: {
+                            500: '#f97316',
+                            600: '#ea580c',
+                            400: '#fb923c'
+                        },
+                        gold: '#f59e0b'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .spark-glow {
+            box-shadow: 0 0 25px rgba(249, 115, 22, 0.35);
+        }
+        .steel-card {
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .steel-card:hover {
+            border-color: rgba(249, 115, 22, 0.4);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f97316;
+        }
+    </style>
+</head>
+<body class="bg-steel-900 text-slate-100 font-sans antialiased selection:bg-spark-500 selection:text-white">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-gradient-to-r from-spark-600 to-amber-600 text-white text-xs md:text-sm font-semibold py-2 px-4 text-center tracking-wide">
+        <i class="fa-solid fa-screwdriver-wrench mr-2">="</i> Top Quality Metal Welding & Fabrication in Eldoret Town! | Call or WhatsApp: 
+        <a href="tel:0114369336" class="underline hover:text-slate-900 ml-1 font-bold">0114369336</a>
+    </div>
+
+    <!-- NAVIGATION HEADER -->
+    <nav class="sticky top-0 z-40 bg-steel-900/95 backdrop-blur-md border-b border-steel-700/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3">
+                    <div class="w-11 h-11 rounded-lg bg-gradient-to-br from-spark-500 to-amber-600 flex items-center justify-center text-slate-900 font-black text-xl shadow-lg spark-glow">
+                        <i class="fa-solid fa-fire-flame-curved text-slate-950 text-2xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl md:text-2xl font-extrabold tracking-tight text-white block leading-none">
+                            OCHOLAH <span class="text-spark-500">FABRICATORS</span>
+                        </span>
+                        <span class="text-xs text-slate-400 font-medium tracking-wider uppercase block mt-1">
+                            John Ocholah • Eldoret Town
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#services" class="hover:text-spark-400 transition-colors">Services</a>
+                    <a href="#portfolio" class="hover:text-spark-400 transition-colors">Products & Gallery</a>
+                    <a href="#calculator" class="hover:text-spark-400 transition-colors">Instant Estimator</a>
+                    <a href="#process" class="hover:text-spark-400 transition-colors">How We Work</a>
+                    <a href="#about" class="hover:text-spark-400 transition-colors">About John</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="https://wa.me/254114369336?text=Hello%20John%20Ocholah,%20I%20would%20like%20to%20inquire%20about%20welding%20services." 
+                       target="_blank" 
+                       class="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2.5 rounded-lg text-sm font-bold flex items-center gap-2 transition-all shadow-md">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>WhatsApp Chat</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white p-2 text-2xl focus:outline-none">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-steel-800 border-b border-steel-700 px-4 pt-2 pb-6 space-y-3">
+            <a href="#services" class="block text-slate-200 hover:text-spark-400 font-medium py-1">Services</a>
+            <a href="#portfolio" class="block text-slate-200 hover:text-spark-400 font-medium py-1">Products & Gallery</a>
+            <a href="#calculator" class="block text-slate-200 hover:text-spark-400 font-medium py-1">Instant Quote Estimator</a>
+            <a href="#process" class="block text-slate-200 hover:text-spark-400 font-medium py-1">How We Work</a>
+            <a href="#about" class="block text-slate-200 hover:text-spark-400 font-medium py-1">About Us</a>
+            <div class="pt-2 flex flex-col gap-2">
+                <a href="https://wa.me/254114369336" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white py-2.5 rounded-lg font-bold text-center flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp: 0114369336
+                </a>
+                <a href="tel:0114369336" class="w-full bg-spark-500 hover:bg-spark-600 text-white py-2.5 rounded-lg font-bold text-center flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone"></i> Call 0114369336
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative py-16 md:py-24 bg-gradient-to-b from-steel-900 via-steel-800 to-steel-900 overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#f97316_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Hero Text -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-spark-500/10 border border-spark-500/30 text-spark-400 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold">
+                        <i class="fa-solid fa-location-dot"></i> Based in Eldoret Town • Fast On-Site Fitting
+                    </div>
+                    
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+                        You Dream & Book, <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-spark-400 via-amber-400 to-spark-500">
+                            We Weld & Fit For You!
+                        </span>
+                    </h1>
+                    
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Expert custom steel fabrication by <strong>John Ocholah</strong>. Premium modern steel main doors, reinforced window frames, security gates, and heavy structural welding built to last a lifetime.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#calculator" class="w-full sm:w-auto bg-spark-500 hover:bg-spark-600 text-white px-7 py-3.5 rounded-xl font-bold text-base shadow-lg hover:shadow-spark-500/25 transition-all flex items-center justify-center gap-3 spark-glow">
+                            <i class="fa-solid fa-calculator text-lg"></i>
+                            <span>Calculate & Book Quote</span>
+                        </a>
+                        
+                        <a href="https://wa.me/254114369336?text=Hi%20John%20Ocholah,%20I%20saw%20your%20metalwork%20website%20and%20need%20a%20custom%20fabrication%20job." target="_blank" class="w-full sm:w-auto bg-steel-800 hover:bg-steel-700 text-white border border-steel-600 px-7 py-3.5 rounded-xl font-bold text-base transition-all flex items-center justify-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-xl"></i>
+                            <span>Chat on WhatsApp</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Stats -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-steel-700/60 max-w-md mx-auto lg:mx-0">
+                        <div>
+                            <span class="block text-2xl sm:text-3xl font-extrabold text-white">100%</span>
+                            <span class="text-xs text-slate-400 font-medium">Custom Steel</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl sm:text-3xl font-extrabold text-spark-400">Eldoret</span>
+                            <span class="text-xs text-slate-400 font-medium">Town Workshop</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl sm:text-3xl font-extrabold text-white">Fast</span>
+                            <span class="text-xs text-slate-400 font-medium">Site Fitting</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Visual Showcase -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Main Frame Showcase -->
+                        <div class="steel-card p-4 sm:p-6 rounded-2xl shadow-2xl relative overflow-hidden group">
+                            <div class="relative h-96 sm:h-[420px] rounded-xl overflow-hidden bg-steel-900">
+                                <img id="hero-img" src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80" 
+                                     alt="Metal Fabrication Eldoret" 
+                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-t from-steel-950 via-transparent to-transparent opacity-90"></div>
+                                
+                                <div class="absolute bottom-4 left-4 right-4 text-white">
+                                    <span class="bg-spark-500 text-slate-950 text-xs font-black uppercase tracking-wider px-2.5 py-1 rounded">Featured Craft</span>
+                                    <h3 class="text-lg font-bold mt-2 text-white">Heavy Steel Main Security Door</h3>
+                                    <p class="text-xs text-slate-300">Modern geometric paneling, glass cutouts & high-security lock system.</p>
+                                </div>
+                            </div>
+
+                            <!-- Floating Badge -->
+                            <div class="absolute -top-3 -right-3 bg-amber-500 text-slate-950 font-black text-xs px-3 py-1.5 rounded-full shadow-lg border border-white/20 flex items-center gap-1.5">
+                                <i class="fa-solid fa-award"></i> Quality Guaranteed
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE SERVICES SECTION -->
+    <section id="services" class="py-16 bg-steel-900 border-t border-steel-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs text-spark-400 font-bold tracking-widest uppercase mb-2">Our Expertise</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Precision Metalwork & Structural Welding</p>
+                <p class="text-slate-400 text-sm sm:text-base mt-3">From residential home doors to commercial structural welding in Eldoret Town and across Uasin Gishu county.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service 1 -->
+                <div class="steel-card p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-spark-500/10 border border-spark-500/30 text-spark-400 flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-door-closed"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Modern Steel Doors</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Custom double & single panel steel main doors featuring modern geometric cutouts, glass frame fittings, and anti-burglar design.
+                    </p>
+                    <span class="text-xs text-spark-400 font-semibold flex items-center gap-1">
+                        Custom Sizes Available <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </span>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="steel-card p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-spark-500/10 border border-spark-500/30 text-spark-400 flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-border-all"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Steel Window Casements</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Heavy-duty steel windows equipped with built-in security grilles, top ventilation slots, and weather-sealed frame designs.
+                    </p>
+                    <span class="text-xs text-spark-400 font-semibold flex items-center gap-1">
+                        Built for Durability <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </span>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="steel-card p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-spark-500/10 border border-spark-500/30 text-spark-400 flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Compound Security Gates</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Sliding and swing steel gates for homes, apartments, and commercial compounds with custom sheet designs and ironwork.
+                    </p>
+                    <span class="text-xs text-spark-400 font-semibold flex items-center gap-1">
+                        Heavy Sheet Metal <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </span>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="steel-card p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-spark-500/10 border border-spark-500/30 text-spark-400 flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-hammer"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">On-Site Custom Welding</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Mobile arc welding, structural repairs, tank stands, staircases, and custom metalwork directly at your construction site in Eldoret.
+                    </p>
+                    <span class="text-xs text-spark-400 font-semibold flex items-center gap-1">
+                        Site Delivery & Fitting <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO / GALLERY WITH CATEGORY FILTERS -->
+    <section id="portfolio" class="py-16 bg-steel-800/50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+                <div>
+                    <h2 class="text-xs text-spark-400 font-bold tracking-widest uppercase mb-2">Our Craftsmanship Catalog</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-white">Fabricated Metalwork Gallery</p>
+                    <p class="text-slate-400 text-sm mt-1">Browse photos of recent doors, window frames, and gates fabricated in our workshop.</p>
+                </div>
+
+                <!-- Category Filters -->
+                <div class="flex flex-wrap gap-2" id="filter-buttons">
+                    <button data-filter="all" class="filter-btn active bg-spark-500 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all">All Products</button>
+                    <button data-filter="doors" class="filter-btn bg-steel-700 hover:bg-steel-600 text-slate-200 px-4 py-2 rounded-lg text-sm font-semibold transition-all">Steel Doors</button>
+                    <button data-filter="windows" class="filter-btn bg-steel-700 hover:bg-steel-600 text-slate-200 px-4 py-2 rounded-lg text-sm font-semibold transition-all">Windows</button>
+                    <button data-filter="gates" class="filter-btn bg-steel-700 hover:bg-steel-600 text-slate-200 px-4 py-2 rounded-lg text-sm font-semibold transition-all">Gates & Grilles</button>
+                </div>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+                
+                <!-- Product Card 1 -->
+                <div class="gallery-item doors steel-card rounded-2xl overflow-hidden group">
+                    <div class="relative h-64 overflow-hidden bg-steel-950">
+                        <img src="https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?auto=format&fit=crop&w=800&q=80" alt="Modern Grey Steel Double Panel Main Door" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-steel-950 via-transparent to-transparent opacity-70"></div>
+                        <span class="absolute top-3 left-3 bg-steel-900/90 text-spark-400 text-xs font-bold px-2.5 py-1 rounded">Steel Door</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-white group-hover:text-spark-400 transition-colors">Modern Grey Double-Panel Steel Main Door</h3>
+                        <p class="text-xs text-slate-400 mt-1">Features geometric inset panels, dual window glass cutouts & ventilation grille.</p>
+                        <div class="mt-4 flex items-center justify-between pt-3 border-t border-steel-700/60">
+                            <div>
+                                <span class="text-xs text-slate-400 block">Estimated Price</span>
+                                <span class="text-base font-extrabold text-amber-400">KSh 18,500 - 32,000</span>
+                            </div>
+                            <button onclick="orderItem('Modern Grey Double-Panel Steel Main Door')" class="bg-spark-500 hover:bg-spark-600 text-white px-3.5 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5">
+                                <i class="fa-brands fa-whatsapp text-sm"></i> Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="gallery-item windows steel-card rounded-2xl overflow-hidden group">
+                    <div class="relative h-64 overflow-hidden bg-steel-950">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Steel Window Frame with Vent" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-steel-950 via-transparent to-transparent opacity-70"></div>
+                        <span class="absolute top-3 left-3 bg-steel-900/90 text-spark-400 text-xs font-bold px-2.5 py-1 rounded">Window Casement</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-white group-hover:text-spark-400 transition-colors">Multi-Pane Steel Window with Grille</h3>
+                        <p class="text-xs text-slate-400 mt-1">Built-in security bars, top louvre vents, and heavy-duty hinges for houses.</p>
+                        <div class="mt-4 flex items-center justify-between pt-3 border-t border-steel-700/60">
+                            <div>
+                                <span class="text-xs text-slate-400 block">Estimated Price</span>
+                                <span class="text-base font-extrabold text-amber-400">KSh 7,500 - 14,000</span>
+                            </div>
+                            <button onclick="orderItem('Multi-Pane Steel Window with Grille')" class="bg-spark-500 hover:bg-spark-600 text-white px-3.5 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5">
+                                <i class="fa-brands fa-whatsapp text-sm"></i> Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="gallery-item gates steel-card rounded-2xl overflow-hidden group">
+                    <div class="relative h-64 overflow-hidden bg-steel-950">
+                        <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=800&q=80" alt="Heavy Steel Security Gate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-steel-950 via-transparent to-transparent opacity-70"></div>
+                        <span class="absolute top-3 left-3 bg-steel-900/90 text-spark-400 text-xs font-bold px-2.5 py-1 rounded">Security Gate</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-white group-hover:text-spark-400 transition-colors">Compound Steel Security Gate</h3>
+                        <p class="text-xs text-slate-400 mt-1">Heavy gauge steel sheet paneling with top security grille extension.</p>
+                        <div class="mt-4 flex items-center justify-between pt-3 border-t border-steel-700/60">
+                            <div>
+                                <span class="text-xs text-slate-400 block">Estimated Price</span>
+                                <span class="text-base font-extrabold text-amber-400">KSh 45,000 - 85,000</span>
+                            </div>
+                            <button onclick="orderItem('Compound Steel Security Gate')" class="bg-spark-500 hover:bg-spark-600 text-white px-3.5 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5">
+                                <i class="fa-brands fa-whatsapp text-sm"></i> Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="gallery-item doors steel-card rounded-2xl overflow-hidden group">
+                    <div class="relative h-64 overflow-hidden bg-steel-950">
+                        <img src="https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?auto=format&fit=crop&w=800&q=80" alt="Workshop Welded Metal Door" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-steel-950 via-transparent to-transparent opacity-70"></div>
+                        <span class="absolute top-3 left-3 bg-steel-900/90 text-spark-400 text-xs font-bold px-2.5 py-1 rounded">Custom Door</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-white group-hover:text-spark-400 transition-colors">Reinforced Single Panel Steel Door</h3>
+                        <p class="text-xs text-slate-400 mt-1">Solid steel construction with anti-rust primer and security deadbolt casing.</p>
+                        <div class="mt-4 flex items-center justify-between pt-3 border-t border-steel-700/60">
+                            <div>
+                                <span class="text-xs text-slate-400 block">Estimated Price</span>
+                                <span class="text-base font-extrabold text-amber-400">KSh 12,000 - 22,000</span>
+                            </div>
+                            <button onclick="orderItem('Reinforced Single Panel Steel Door')" class="bg-spark-500 hover:bg-spark-600 text-white px-3.5 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5">
+                                <i class="fa-brands fa-whatsapp text-sm"></i> Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 5 -->
+                <div class="gallery-item windows steel-card rounded-2xl overflow-hidden group">
+                    <div class="relative h-64 overflow-hidden bg-steel-950">
+                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Large Commercial Window Casement" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-steel-950 via-transparent to-transparent opacity-70"></div>
+                        <span class="absolute top-3 left-3 bg-steel-900/90 text-spark-400 text-xs font-bold px-2.5 py-1 rounded">Commercial Window</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-white group-hover:text-spark-400 transition-colors">Heavy Commercial Window Frame</h3>
+                        <p class="text-xs text-slate-400 mt-1">Designed for apartments and store fronts with thick square tube reinforcement.</p>
+                        <div class="mt-4 flex items-center justify-between pt-3 border-t border-steel-700/60">
+                            <div>
+                                <span class="text-xs text-slate-400 block">Estimated Price</span>
+                                <span class="text-base font-extrabold text-amber-400">KSh 9,500 - 18,000</span>
+                            </div>
+                            <button onclick="orderItem('Heavy Commercial Window Frame')" class="bg-spark-500 hover:bg-spark-600 text-white px-3.5 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5">
+                                <i class="fa-brands fa-whatsapp text-sm"></i> Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 6 -->
+                <div class="gallery-item gates steel-card rounded-2xl overflow-hidden group">
+                    <div class="relative h-64 overflow-hidden bg-steel-950">
+                        <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=800&q=80" alt="Steel Balustrade & Railing Fabrication" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-steel-950 via-transparent to-transparent opacity-70"></div>
+                        <span class="absolute top-3 left-3 bg-steel-900/90 text-spark-400 text-xs font-bold px-2.5 py-1 rounded">Balustrades & Grilles</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-white group-hover:text-spark-400 transition-colors">Custom Veranda Railings & Grilles</h3>
+                        <p class="text-xs text-slate-400 mt-1">Decorative and security metal railings for balconies, staircases, and windows.</p>
+                        <div class="mt-4 flex items-center justify-between pt-3 border-t border-steel-700/60">
+                            <div>
+                                <span class="text-xs text-slate-400 block">Estimated Price</span>
+                                <span class="text-base font-extrabold text-amber-400">Custom Quote</span>
+                            </div>
+                            <button onclick="orderItem('Custom Veranda Railings & Grilles')" class="bg-spark-500 hover:bg-spark-600 text-white px-3.5 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5">
+                                <i class="fa-brands fa-whatsapp text-sm"></i> Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE ESTIMATOR & BOOKING FORM SECTION -->
+    <section id="calculator" class="py-16 bg-steel-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Details -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-spark-500/10 border border-spark-500/30 text-spark-400 px-3.5 py-1.5 rounded-full text-xs font-semibold">
+                        <i class="fa-solid fa-calculator"></i> Instant Online Cost Estimator
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                        Calculate Estimate & <span class="text-spark-400">Book Welding Job</span>
+                    </h2>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                        Select your product type, enter dimensions (feet), and choose custom options to get an instant cost estimate. You can then submit your booking directly to <strong>John Ocholah</strong> via WhatsApp!
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-steel-800 text-spark-400 flex items-center justify-center shrink-0 text-lg border border-steel-700">
+                                <i class="fa-solid fa-ruler-combined"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Tailored Dimensions</h4>
+                                <p class="text-xs text-slate-400">We weld according to your exact house plan specifications in Eldoret.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-steel-800 text-spark-400 flex items-center justify-center shrink-0 text-lg border border-steel-700">
+                                <i class="fa-solid fa-truck-ramp-box"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Site Delivery & Fitting</h4>
+                                <p class="text-xs text-slate-400">Includes delivery and on-site alignment around Eldoret, Annex, Kapseret & environs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Form Calculator Card -->
+                <div class="lg:col-span-7">
+                    <div class="steel-card p-6 sm:p-8 rounded-3xl shadow-2xl relative border border-steel-700/80">
+                        <h3 class="text-xl font-bold text-white mb-6 flex items-center justify-between">
+                            <span>Job Specification Form</span>
+                            <span class="text-xs bg-spark-500/20 text-spark-400 px-3 py-1 rounded-full font-semibold border border-spark-500/30">Instant Pricing</span>
+                        </h3>
+
+                        <form id="quote-calculator-form" class="space-y-5">
+                            <!-- Product Selection -->
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">1. Select Metalwork Item</label>
+                                <select id="calc-item" class="w-full bg-steel-900 border border-steel-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-spark-500 transition-colors">
+                                    <option value="door_double" data-rate="2200">Steel Main Door (Double Panel with Glass Cutout)</option>
+                                    <option value="door_single" data-rate="1800">Steel Door (Single Security Panel)</option>
+                                    <option value="window_standard" data-rate="1200">Steel Window Casement (with Grille & Vent)</option>
+                                    <option value="gate_compound" data-rate="2600">Compound Sliding / Swing Security Gate</option>
+                                    <option value="custom_welding" data-rate="1500">Custom Metal Frame / Railings / Structure</option>
+                                </select>
+                            </div>
+
+                            <!-- Dimensions -->
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Height (Feet)</label>
+                                    <input type="number" id="calc-height" value="7" min="1" max="30" class="w-full bg-steel-900 border border-steel-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-spark-500 transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Width (Feet)</label>
+                                    <input type="number" id="calc-width" value="4" min="1" max="30" class="w-full bg-steel-900 border border-steel-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-spark-500 transition-colors">
+                                </div>
+                            </div>
+
+                            <!-- Add-on checkboxes -->
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">2. Finishing Options</label>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <label class="flex items-center gap-3 bg-steel-900 p-3 rounded-xl border border-steel-700 cursor-pointer hover:border-steel-600">
+                                        <input type="checkbox" id="opt-primer" checked class="w-4 h-4 accent-spark-500 rounded">
+                                        <span class="text-xs text-slate-300 font-medium">Anti-Rust Primer Coating (+KSh 1,500)</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 bg-steel-900 p-3 rounded-xl border border-steel-700 cursor-pointer hover:border-steel-600">
+                                        <input type="checkbox" id="opt-fitting" checked class="w-4 h-4 accent-spark-500 rounded">
+                                        <span class="text-xs text-slate-300 font-medium">On-Site Delivery & Fitting (+KSh 2,500)</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Customer Notes & Location -->
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">3. Your Location in Eldoret / Notes</label>
+                                <input type="text" id="calc-notes" placeholder="e.g. Near Annex / Langas, need double lock frame" class="w-full bg-steel-900 border border-steel-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-spark-500 transition-colors">
+                            </div>
+
+                            <!-- Cost Output Box -->
+                            <div class="bg-gradient-to-r from-steel-950 to-steel-900 p-5 rounded-2xl border border-spark-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+                                <div>
+                                    <span class="text-xs text-slate-400 uppercase font-semibold block">Estimated Total Cost</span>
+                                    <span id="estimated-total" class="text-2xl sm:text-3xl font-extrabold text-amber-400">KSh 65,600</span>
+                                </div>
+                                
+                                <button type="button" id="send-whatsapp-booking-btn" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-3.5 rounded-xl font-bold text-sm shadow-lg transition-all flex items-center justify-center gap-2">
+                                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                                    <span>Send Order to WhatsApp</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING PROCESS WORKFLOW SECTION -->
+    <section id="process" class="py-16 bg-steel-800/40 border-t border-b border-steel-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <h2 class="text-xs text-spark-400 font-bold tracking-widest uppercase mb-2">Book & We Weld For You</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">How Your Order Works</p>
+                <p class="text-slate-400 text-sm sm:text-base mt-2">Simple 4-step workflow from design booking to on-site installation.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+                <!-- Step 1 -->
+                <div class="steel-card p-6 rounded-2xl text-center relative">
+                    <div class="w-12 h-12 mx-auto rounded-full bg-spark-500 text-slate-950 font-black text-xl flex items-center justify-center mb-4 spark-glow">
+                        1
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Book & Quote</h3>
+                    <p class="text-xs text-slate-400">Select design & dimensions online or send photos via WhatsApp: <strong>0114369336</strong>.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="steel-card p-6 rounded-2xl text-center relative">
+                    <div class="w-12 h-12 mx-auto rounded-full bg-steel-700 text-white font-black text-xl flex items-center justify-center mb-4 border border-steel-600">
+                        2
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Material Prep</h3>
+                    <p class="text-xs text-slate-400">We source heavy-gauge steel angles, hollow tubes, and solid metal sheets.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="steel-card p-6 rounded-2xl text-center relative">
+                    <div class="w-12 h-12 mx-auto rounded-full bg-steel-700 text-white font-black text-xl flex items-center justify-center mb-4 border border-steel-600">
+                        3
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Precision Welding</h3>
+                    <p class="text-xs text-slate-400">John Ocholah cuts, aligns, and arc-welds your structures with high precision.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="steel-card p-6 rounded-2xl text-center relative">
+                    <div class="w-12 h-12 mx-auto rounded-full bg-emerald-600 text-white font-black text-xl flex items-center justify-center mb-4 shadow-lg">
+                        4
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Delivery & Fitting</h3>
+                    <p class="text-xs text-slate-400">Transported to your site in Eldoret and fitted securely with heavy hinges & locks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT JOHN OCHOLAH & WORKSHOP SECTION -->
+    <section id="about" class="py-16 bg-steel-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="steel-card p-8 sm:p-12 rounded-3xl relative overflow-hidden border border-steel-700">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="lg:col-span-4 text-center">
+                        <div class="w-36 h-36 mx-auto rounded-full overflow-hidden border-4 border-spark-500 shadow-2xl mb-4 bg-steel-800 flex items-center justify-center text-5xl text-spark-400">
+                            <i class="fa-solid fa-user-gear"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-white">John Ocholah</h3>
+                        <p class="text-xs text-spark-400 font-semibold uppercase tracking-wider">Master Fabricator & Owner</p>
+                        <p class="text-xs text-slate-400 mt-2"><i class="fa-solid fa-location-dot text-spark-500"></i> Eldoret Town, Kenya</p>
+                    </div>
+
+                    <div class="lg:col-span-8 space-y-4">
+                        <h2 class="text-2xl sm:text-3xl font-bold text-white">
+                            Trusted Metal Fabrication & Custom Steelwork in Eldoret
+                        </h2>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Welcome to <strong>Ocholah Metal Fabricators</strong>. Managed personally by John Ocholah, our workshop brings craft mastery, structural integrity, and contemporary designs to every project. Whether you are constructing your residential home, rental apartments, or commercial premises, we fabricate custom metal doors, windows, and security gates engineered for maximum security and aesthetic elegance.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                            <div class="bg-steel-900/80 p-3.5 rounded-xl border border-steel-700/60 flex items-center gap-3">
+                                <i class="fa-solid fa-shield text-spark-400 text-xl"></i>
+                                <span class="text-xs text-slate-200 font-medium">Reinforced Security Designs</span>
+                            </div>
+                            <div class="bg-steel-900/80 p-3.5 rounded-xl border border-steel-700/60 flex items-center gap-3">
+                                <i class="fa-solid fa-clock text-spark-400 text-xl"></i>
+                                <span class="text-xs text-slate-200 font-medium">Fast Turnaround & Delivery</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 flex flex-wrap gap-4">
+                            <a href="tel:0114369336" class="bg-spark-500 hover:bg-spark-600 text-white px-5 py-2.5 rounded-xl font-bold text-sm transition-all flex items-center gap-2">
+                                <i class="fa-solid fa-phone"></i> Call 0114369336
+                            </a>
+                            <a href="https://wa.me/254114369336" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-xl font-bold text-sm transition-all flex items-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-lg"></i> Direct WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="py-16 bg-steel-800/30">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-xs text-spark-400 font-bold tracking-widest uppercase mb-2">Got Questions?</h2>
+                <p class="text-3xl font-extrabold text-white">Frequently Asked Questions</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="steel-card p-5 rounded-2xl">
+                    <h3 class="font-bold text-white text-base mb-2">Where is your workshop located in Eldoret?</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Our main workshop is located in Eldoret Town. We offer direct site visits for measurements and installation across Eldoret Town, Annex, Kapseret, Langas, Turbo, and Kesses.</p>
+                </div>
+
+                <div class="steel-card p-5 rounded-2xl">
+                    <h3 class="font-bold text-white text-base mb-2">Can I provide my own custom door or gate design photo?</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Yes! Simply send us your photo design on WhatsApp (0114369336), and John Ocholah will quote and fabricate it to match your exact measurements.</p>
+                </div>
+
+                <div class="steel-card p-5 rounded-2xl">
+                    <h3 class="font-bold text-white text-base mb-2">Do you provide anti-rust primer painting?</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">All our metalwork items are thoroughly prepped and coated with high-quality anti-rust metal primer paint before delivery to prevent corrosion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-steel-950 border-t border-steel-800 pt-12 pb-8 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                
+                <div class="space-y-3 md:col-span-2">
+                    <span class="text-xl font-extrabold text-white tracking-tight">
+                        OCHOLAH <span class="text-spark-500">FABRICATORS</span>
+                    </span>
+                    <p class="text-xs text-slate-400 leading-relaxed max-w-md">
+                        Custom metal doors, window casements, security gates, and heavy structural welding services in Eldoret Town owned and operated by John Ocholah.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3">Service Areas</h4>
+                    <ul class="text-xs space-y-1.5 text-slate-400">
+                        <li>• Eldoret Town Central</li>
+                        <li>• Annex & Langas</li>
+                        <li>• Kapseret & Pioneer</li>
+                        <li>• Turbo & Kesses Environs</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3">Direct Contact</h4>
+                    <p class="text-xs text-slate-300"><strong>Owner:</strong> John Ocholah</p>
+                    <p class="text-xs text-slate-300 mt-1"><strong>Phone / WhatsApp:</strong></p>
+                    <a href="tel:0114369336" class="text-spark-400 font-bold block text-sm hover:underline">0114369336</a>
+                    <a href="https://wa.me/254114369336" target="_blank" class="text-emerald-400 font-semibold block text-xs mt-1 hover:underline">
+                        <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="pt-6 border-t border-steel-900 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-2">
+                <p>&copy; 2026 Ocholah Metal Fabricators & Custom Welding. All rights reserved.</p>
+                <p>Designed for Quality Welding in Eldoret Town</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING QUICK ACTION BUTTONS -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <!-- Floating WhatsApp Button -->
+        <a href="https://wa.me/254114369336?text=Hi%20John%20Ocholah,%20I%20want%20to%20book%20a%20welding%20job%20in%20Eldoret." 
+           target="_blank" 
+           class="bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-3xl transition-transform hover:scale-110 spark-glow" 
+           title="WhatsApp Chat">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <!-- Floating Call Button -->
+        <a href="tel:0114369336" 
+           class="bg-spark-500 hover:bg-spark-600 text-white w-12 h-12 rounded-full shadow-2xl flex items-center justify-center text-xl transition-transform hover:scale-110" 
+           title="Direct Call">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- JAVASCRIPT FOR INTERACTIVITY & CALCULATOR -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Portfolio Filter Functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active styling
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-spark-500', 'text-white', 'active');
+                    b.classList.add('bg-steel-700', 'text-slate-200');
+                });
+                
+                // Add active to clicked
+                btn.classList.add('bg-spark-500', 'text-white', 'active');
+                btn.classList.remove('bg-steel-700', 'text-slate-200');
+
+                const filter = btn.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Calculator Logic
+        const calcItem = document.getElementById('calc-item');
+        const calcHeight = document.getElementById('calc-height');
+        const calcWidth = document.getElementById('calc-width');
+        const optPrimer = document.getElementById('opt-primer');
+        const optFitting = document.getElementById('opt-fitting');
+        const estimatedTotal = document.getElementById('estimated-total');
+        const whatsappBookingBtn = document.getElementById('send-whatsapp-booking-btn');
+
+        function calculateCost() {
+            const selectedOption = calcItem.options[calcItem.selectedIndex];
+            const ratePerSqFt = parseFloat(selectedOption.getAttribute('data-rate')) || 1500;
+            const h = parseFloat(calcHeight.value) || 0;
+            const w = parseFloat(calcWidth.value) || 0;
+
+            const area = h * w;
+            let total = area * ratePerSqFt;
+
+            if (optPrimer.checked) total += 1500;
+            if (optFitting.checked) total += 2500;
+
+            // Minimum job base cost safeguard
+            if (total < 5000 && area > 0) total = 5000;
+
+            estimatedTotal.textContent = `KSh ${total.toLocaleString()}`;
+            return total;
+        }
+
+        // Add event listeners for dynamic instant calculation
+        [calcItem, calcHeight, calcWidth, optPrimer, optFitting].forEach(elem => {
+            elem.addEventListener('input', calculateCost);
+            elem.addEventListener('change', calculateCost);
+        });
+
+        // WhatsApp Order Dispatch
+        whatsappBookingBtn.addEventListener('click', () => {
+            const itemText = calcItem.options[calcItem.selectedIndex].text;
+            const h = calcHeight.value;
+            const w = calcWidth.value;
+            const notes = document.getElementById('calc-notes').value || 'None specified';
+            const cost = calculateCost();
+
+            const primerText = optPrimer.checked ? 'Yes' : 'No';
+            const fittingText = optFitting.checked ? 'Yes' : 'No';
+
+            const message = `Hello John Ocholah, I would like to book a welding job from your website:%0A%0A` +
+                            `• *Item:* ${encodeURIComponent(itemText)}%0A` +
+                            `• *Dimensions:* ${h} ft (H) x ${w} ft (W)%0A` +
+                            `• *Anti-Rust Primer:* ${primerText}%0A` +
+                            `• *On-Site Fitting:* ${fittingText}%0A` +
+                            `• *Location/Notes:* ${encodeURIComponent(notes)}%0A` +
+                            `• *Estimated Cost:* KSh ${cost.toLocaleString()}%0A%0A` +
+                            `Please confirm availability & site measurement date.`;
+
+            window.open(`https://wa.me/254114369336?text=${message}`, '_blank');
+        });
+
+        // Quick Gallery Order trigger
+        function orderItem(itemName) {
+            const message = `Hello John Ocholah, I am interested in ordering: *${encodeURIComponent(itemName)}* seen on your metalwork website. Please share full details and pricing for Eldoret town delivery.`;
+            window.open(`https://wa.me/254114369336?text=${message}`, '_blank');
+        }
+
+        // Initialize calculation on load
+        calculateCost();
+    </script>
+</body>
+</html>
+```
